@@ -1,14 +1,15 @@
 "use client"
 import { CgProfile } from "react-icons/cg";
 import Link from "next/link";
-import React from "react";
+import { ConnectWallet, ThirdwebProvider } from "@thirdweb-dev/react";
 import { Button } from "../ui/button";
 import { auth } from "@/auth";
-export  async function  Navbar(){
-  async function handlesubmit(){
-    await SignInAction('google')}
-  const getsession=await auth()
+export  default function  Navbar(){
+  // async function handlesubmit(){
+  //   await SignInAction('google')}
+  // const getsession=await auth()
   return (
+    <ThirdwebProvider >
     <div className="flex items-center justify-between max-sm:gap-7  bg-fixed p-6">
       <div>
         <Link
@@ -21,18 +22,20 @@ export  async function  Navbar(){
         </Link>
       </div>
       <div>
-        { getsession && getsession.user ? <Link href="/profile"><CgProfile size={35} /></Link> :
+        <ConnectWallet className="bg-[#1A237E]" />
+        {/* { getsession && getsession.user ? <Link href="/profile"><CgProfile size={35} /></Link> :
            <form acttion={handlesubmit }> 
-            <Button className="bg-[#1A237E]" type="submit">Sign in</Button>
+            <Button className="bg-[#1A237E]" type="submit">Si</Button>
            </form>
           
         
       
-        }
+        } */}
         </div>{" "}
         
     </div>
+    </ThirdwebProvider>
   );
 };
 
-export default Navbar;
+

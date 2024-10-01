@@ -11,7 +11,7 @@ export function  Hero() {
                 <Input placeholder="Search players " className=" rounded-full md:w-[900px] w-[300px]" />
                 
             </div>
-            <div className="text-white"><Link href="/players">All Players</Link></div>
+            <div className="text-white"><Link href="/players">Players</Link></div>
         </div>
     );
 }

@@ -2,7 +2,7 @@
 import FearturedPlayer from "@/components/featured-players";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
-import { Navbar } from "@/components/navbar";
+import Navbar from "@/components/navbar/navar";
 import { SinglePlayer } from "@/components/single-player";
 
 export default function Home() {

@@ -1,6 +1,6 @@
 export const intiallFormData = {
     PlayerName: "",
-    PlayerRating: 0,
+    playerRating: 0,
     PlayerImage: "",
     playerPosition: 0,
     playerContry: "",

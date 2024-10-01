@@ -1,3 +1,5 @@
+
+// 861312042601739        
 import {
     Card,
     CardContent,
@@ -19,21 +21,38 @@ export default async function FearturedPlayer() {
                 getFeaturedPlayers.data && getFeaturedPlayers.data.length > 0
                 ? getFeaturedPlayers.data.map((item) => (
                     <div>
-                         <Card>
-         <CardHeader>
-        <CardTitle>
-          {item.playerName}
-        </CardTitle>
+      <Card className="w-full sm:w-[300px] mx-auto my-4 shadow-lg border border-gray-200">
+      {/* Card Header */}
+      <CardHeader className="text-center">
+        <CardTitle className="text-lg font-bold">{item.playerName}</CardTitle>
       </CardHeader>
-        <CardContent>
-            <img src={item.PlayerImage} alt={item.PlayerName}/>
-        </CardContent>
 
-        <CardFooter className="flex justify-between">
-            <div>{item.PlayerRating}</div>
-            <div>{item.playerTeam}</div>
-        </CardFooter>
-        </Card>
+      {/* Card Content - Image */}
+      <CardContent className="flex justify-center items-center">
+        <img
+          src={item.PlayerImage}
+          alt={item.PlayerName}
+          className="w-[150px] h-[150px] object-cover rounded-full" // Uniform size
+        />
+      </CardContent>
+
+      {/* Card Title - Player Name */}
+      <CardTitle className="text-center text-xl font-semibold my-2">
+        {item.playerName}
+      </CardTitle>
+
+      {/* Card Footer - Rating and Team */}
+      <CardFooter className="flex justify-between text-sm text-gray-600 px-4">
+        <div>
+          <span className="font-bold">Rating:</span> {item.playerRating}
+        </div>
+        <div>
+          <span className="font-bold">Team:</span> {item.playerTeam}
+        </div>
+      </CardFooter>
+
+    </Card>
+        
                     </div>
                 ))
                 : <h1>No Players found</h1>

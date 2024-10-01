@@ -8,8 +8,8 @@ export default async function Players() {
     const getsession = await auth()
     console.log(getsession)
     const getPlayers= await getAllPlayers()
-    if(!getsession){
-        redirect('/')
+    if(getsession){
+        redirect('/players')
     }
     return (
         < main className="min-h-screen bg-gray-100 flex flex-col items-center p-10">
